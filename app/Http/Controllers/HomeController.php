@@ -45,9 +45,10 @@ class HomeController extends Controller
             new Link('Home', '/'),
             new Link('About', '/about'),
             new Link('Contact', '/contact'),
+            new Link('Products', '/products'),
         ];
 
-        $this->data = new Contact('', '');
+        $this->data = new Contact('empty', 'empty');
     }
 
     // index method to return home view
