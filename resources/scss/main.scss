@@ -1,0 +1,238 @@
+/* connecting Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('./variables.scss');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+/* dark theme */
+html, body {
+    background-color: var(--lt-clr-background);
+    color: var(--lt-clr-text);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--lt-clr-accent);
+    margin: 0;
+}
+
+a {
+    color: var(--lt-clr-link);
+    font-weight: bold;
+
+    &:hover {
+        color: var(--lt-clr-accent);
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 1.25rem;
+    }
+
+    margin-top: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 1.25rem;
+    }
+
+    margin-top: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.25rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 1rem;
+    }
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 0.75rem;
+    }
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.75rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 0.5rem;
+    }
+}
+
+h6 {
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.5rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 0.25rem;
+    }
+}
+
+button {
+    background-color: var(--lt-clr-accent);
+    border: none;
+    color: var(--lt-clr-text-dark);
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: var(--lt-clr-accent-dark);
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.75rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 0.5rem;
+    }
+}
+
+input {
+    border: 1px solid var(--lt-clr-accent);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--lt-clr-text);
+
+    background: var(--lt-clr-background-light);
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.75rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 0.5rem;
+    }
+
+    &::placeholder {
+        color: var(--lt-clr-text-50);
+    }
+}
+
+textarea {
+    border: 1px solid var(--lt-clr-accent);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--lt-clr-text);
+
+    background: var(--lt-clr-background-light);
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.75rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: 0.5rem;
+    }
+
+    &::placeholder {
+        color: var(--lt-clr-text-50);
+    }
+}
+
+label {
+    font-size: 1rem;
+    color: var(--lt-clr-text);
+    padding: 0.5rem 0;
+}
+
+.block {
+    display: block;
+
+    border-top: 1px solid var(--lt-clr-accent);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    th, td {
+        border: 2px solid var(--lt-clr-accent);
+        padding: 0.5rem;
+    }
+
+    th {
+        font-weight: bold;
+        text-align: center;
+
+        font-size: 1.25rem;
+    }
+
+    td {
+        text-align: start;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 400px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
