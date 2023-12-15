@@ -38,6 +38,7 @@ class HomeController extends Controller
     // object which contains links
     public $links;
     public $data;
+    public $about;
 
     public function __construct()
     {
@@ -49,6 +50,8 @@ class HomeController extends Controller
         ];
 
         $this->data = new Contact('empty', 'empty');
+
+        $this->about = "This is the About page of the Laravel test application.";
     }
 
     // index method to return home view
@@ -63,7 +66,9 @@ class HomeController extends Controller
     // about method to return about view
     public function about()
     {
-        return view('about');
+        return view('about', [
+            'about' => $this->about
+        ]);
     }
 
     // contact method to return contact view
