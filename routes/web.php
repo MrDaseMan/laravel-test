@@ -56,18 +56,24 @@ Route::get('/posts/{id}/user', [PostsController::class, 'user']);
 
 Route::get('/posts/{id}/comments', [PostsController::class, 'comments']);
 
-Route::get('/posts/{id}/delete-comment', [PostsController::class, 'deleteComment']);
+Route::get('/posts/{id}/delete-comment/{comment_id}', [PostsController::class, 'deleteComment']);
 
 Route::get('/posts/{id}/comment', [PostsController::class, 'comment']);
 
+Route::get('/posts/{id}/tags', [PostsController::class, 'tags']);
+
+Route::get('/posts/{id}/tag', [PostsController::class, 'tag']);
+
+Route::get('/posts/{id}/delete-tag/{tag_id}', [PostsController::class, 'deleteTag']);
 
 
-use App\Http\Controllers\TagsController;
 
-Route::get('/tags', [TagsController::class, 'index']);
+use App\Http\Controllers\TagController;
 
-Route::get('/tags/{id}/delete', [TagsController::class, 'delete']);
+Route::get('/tags', [TagController::class, 'index']);
 
-Route::post('/tags/store', [TagsController::class, 'store']);
+Route::get('/tags/{id}/delete', [TagController::class, 'delete']);
 
-Route::get('/tags/create', [TagsController::class, 'create']);
+Route::post('/tags/store', [TagController::class, 'store']);
+
+Route::get('/tags/create', [TagController::class, 'create']);

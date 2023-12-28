@@ -10,6 +10,9 @@
         @if (isset($post_comments_id))
             / <a href="/posts/{{ $post_comments_id }}/comments">Комментарии к посту {{ $post_comments_id }}</a>
         @endif
+        @if (isset($post_tags_id))
+            / <a href="/posts/{{ $post_tags_id }}/tags">Теги к посту {{ $post_tags_id }}</a>
+        @endif
     </h1>
     <div class="block">
         <button type="submit" submit="button" onclick="window.location='{{ '/posts/create' }}'">Добавить пост</button>
@@ -31,6 +34,36 @@
                         <button type="submit" submit="button" onclick="window.location='{{ '/posts/' . $post->id . '/tag' }}'">Применить</button> --}}
                         <button type="submit" submit="button" onclick="window.location='{{ '/posts/' . $post->id . '/delete' }}'">Удалить</button>
                     </div>
+                    <div class="post__date">{{ $post->created_at }}</div>
+                    <div class="post__tags">
+                        <h4>Теги:</h4>
+                        @if (isset($post_tags_id))
+                            @foreach ($post->tags as $tag)
+                                <div class="post__tag">{{ $tag->name }} <button type="submit" submit="button" onclick="window.location='{{ '/posts/' . $post->id . '/delete-tag/' . $tag->id }}'">х</button></div>
+                            @endforeach
+                        @else
+                            @foreach ($post->tags->take(3) as $tag)
+                                <div class="post__tag">{{ $tag->name }} <button type="submit" submit="button" onclick="window.location='{{ '/posts/' . $post->id . '/delete-tag/' . $tag->id }}'">х</button></div>
+                            @endforeach
+                            @if (count($post->tags) > 3)
+                                <button type="submit" submit="button" onclick="window.location='{{ '/posts/' . $post->id . '/tags' }}'">...</button>
+                            @endif
+                        @endif
+                        @if (count($post->tags) <= 0)
+                            <p>Теги отсутствуют...</p>
+                        @endif
+                    </div>
+                    @if (count($tags) > 0)
+                    <form action="{{ '/posts/' . $post->id . '/tag' }}" class="post__tag__selector">
+                        Добавить тег:
+                        <select name="tag_id">
+                            @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                            @endforeach
+                        </select>
+                        <button type="submit" submit="button">Добавить</button>
+                    </form>
+                    @endif
                     <div class="post__comments">
                         <h4>Комментарии:</h4>
                         <form action="{{ '/posts/' . $post->id . '/comment' }}" class="post__comment__post">
@@ -41,20 +74,15 @@
                                 @endforeach
                             </select>
                             <input type="text" id="content" name="content" placeholder="Напишите комментарий...">
-                            <button type="submit" submit="button" onclick="window.location='{{ '/posts/' . $post->id . '/comment' }}'">Отправить</button>
+                            <button type="submit" submit="button">Отправить</button>
                         </form>
-                        
-                        @if (!isset($post_comments_id) && count($post->comments()->get()) > 0)
-                            <button type="submit" submit="button" onclick="window.location='{{ '/posts/' . $post->id . '/comments' }}'">Показать все комментарии</button>
-                        @endif
-
                         @if (count($post->comments()->get()) > 0)
                             @if (isset($post_comments_id))
                                 @foreach ($post->comments()->get() as $comment)
-                                    <div class="post__comment">
+                                    <form class="post__comment">
                                         <p><a href="{{ '/posts/' . $comment->user->id . '/user'}}">{{ $comment->user->name }}</a>: {{ $comment->content }}</p>
-                                        <button type="submit" submit="button" onclick="window.location='{{ '/posts/' . $comment->id . '/delete-comment' }}'">x</button>
-                                    </div>
+                                        <button type="submit" submit="button">x</button>
+                                    </form>
                                 @endforeach
                             @else
                                 <div class="post__comment">
@@ -67,6 +95,10 @@
                             <div class="post__comment">
                                 Нет комментариев...
                             </div>
+                        @endif
+                        
+                        @if (!isset($post_comments_id) && count($post->comments()->get()) > 0)
+                            <button type="submit" submit="button" onclick="window.location='{{ '/posts/' . $post->id . '/comments' }}'">Показать все комментарии</button>
                         @endif
                     </div> 
                 </div>

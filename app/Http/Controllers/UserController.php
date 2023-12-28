@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Tag;
 
 class UserController extends Controller
 {
@@ -56,7 +57,8 @@ class UserController extends Controller
         return view('./posts/index', [
             'user' => $user,
             'users' => User::all(),
-            'posts' => $posts
+            'posts' => $posts,
+            'tags' => Tag::all()
         ]);
     }
 
@@ -68,7 +70,8 @@ class UserController extends Controller
         return view('./posts/index', [
             'user' => $user,
             'users' => User::all(),
-            'posts' => isset($post) ? [$post] : []
+            'posts' => isset($post) ? [$post] : [],
+            'tags' => Tag::all()
         ]);
     }
 

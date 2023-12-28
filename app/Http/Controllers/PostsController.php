@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Post;
 use App\Models\User;
-use App\Models\Comments;
+use App\Models\Comment;
+use App\Models\Tag;
+use App\Models\PostTag;
 
 class PostsController extends Controller
 {
@@ -15,7 +17,8 @@ class PostsController extends Controller
     {
         return view('./posts/index', [
             'posts' => Post::where('is_published', true)->get(),
-            'users' => User::all()
+            'users' => User::all(),
+            'tags' => Tag::all()
         ]);
     }
 
@@ -75,7 +78,7 @@ class PostsController extends Controller
     public function comment($id, Request $request)
     {
         $post = Post::findOrFail($request->id);
-        $comment = new Comments();
+        $comment = new Comment();
         $comment->content = $request->content;
         $comment->user_id = $request->user_id;
         $comment->post_id = $id;
@@ -92,13 +95,45 @@ class PostsController extends Controller
             'users' => User::all(),
             'posts' => isset($post) ? [$post] : [],
             'post_comments_id' => $id,
+            'tags' => Tag::all()
         ]);
     }
 
     public function deleteComment($id)
     {
-        $comment = Comments::findOrFail($id);
+        $comment = Comment::findOrFail($id);
         $comment->delete();
+        return redirect('/posts');
+    }
+
+    public function tags($id)
+    {
+        $post = Post::findOrFail($id);
+        $tags = $post->tags;
+
+        return view('./posts/index', [
+            'users' => User::all(),
+            'posts' => isset($post) ? [$post] : [],
+            'post_tags_id' => $id,
+            'tags' => $tags
+        ]);
+    }
+        
+    public function tag($id, Request $request)
+    {
+        $post = Post::findOrFail($request->id);
+        $postTag = new PostTag();
+        $postTag->post_id = $id;
+        $postTag->tag_id = $request->tag_id;
+        $postTag->save();
+        return redirect('/posts');     
+    }
+
+    public function deleteTag($id, Request $request)
+    {
+        $post = Post::findOrFail($request->id);
+        $postTag = PostTag::where('post_id', $id)->where('tag_id', $request->tag_id)->first();
+        $postTag->delete();
         return redirect('/posts');
     }
 }

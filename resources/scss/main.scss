@@ -301,6 +301,10 @@ h1 a {
 
     border-radius: 0.25rem;
 
+    form {
+        width: 100%;
+    }
+
     p {
         margin: 0;
     }
@@ -327,6 +331,53 @@ h1 a {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+    }
+
+    &__tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+
+        margin-top: 1rem;
+        padding-top: 2rem;
+
+        border-top: 1px solid var(--lt-clr-accent);
+
+    }
+
+    &__tag {
+        background: var(--lt-clr-background);
+
+        padding: 0.5rem;
+
+        border-radius: 0.25rem;
+
+        @media screen and (max-width: 768px) {
+            font-size: 0.75rem;
+        }
+
+        &__selector {
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+
+            align-items: center;
+    
+            gap: 12px;
+
+            margin-bottom: 0;
+    
+            @media screen and (max-width: 768px) {
+                font-size: 0.75rem;
+            }
+    
+            & > select {
+                height: 35px;
+            }
+        }
     }
 }
 

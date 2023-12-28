@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Tags;
+use App\Models\Tag;
 
-class TagsController extends Controller
+class TagController extends Controller
 {
     public function index()
     {
         return view('./tags/index', [
-            'tags' => Tags::all()
+            'tags' => Tag::all()
         ]);
     }
 
@@ -23,14 +23,15 @@ class TagsController extends Controller
 
     public function store(Request $request)
     {
-        $tag = new Tags();
+        $tag = new Tag();
         $tag->name = $request->name;
         $tag->save();
         return redirect('/tags');
     }
 
-    public function delete(Tags $tag)
+    public function delete(Request $request)
     {
+        $tag = Tag::find($request->id);
         $tag->delete();
         return redirect('/tags');
     }

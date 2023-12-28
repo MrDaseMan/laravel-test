@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('post_id')->constrained();
             $table->foreignId('tag_id')->constrained();
+            $table->timestamps();
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('post_tag');
     }
 };

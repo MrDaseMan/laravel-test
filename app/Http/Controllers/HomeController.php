@@ -49,6 +49,7 @@ class HomeController extends Controller
             new Link('Продукты', '/products'),
             new Link('Посты', '/posts'),
             new Link('Пользователи', '/users'),
+            new Link('Тэги', '/tags'),
         ];
 
         $this->data = new Contact('empty', 'empty');
