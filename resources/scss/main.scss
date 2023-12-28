@@ -17,7 +17,7 @@ html, body {
 }
 
 body {
-    padding: 1rem;
+    padding: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,94 +35,50 @@ a {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 36px;
     font-weight: bold;
-
-    @media screen and (max-width: 768px) {
-        font-size: 1.5rem;
-    }
-
-    @media screen and (max-width: 480px) {
-        font-size: 1.25rem;
-    }
 
     margin-top: 0.5rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 24px;
     font-weight: bold;
-
-    @media screen and (max-width: 768px) {
-        font-size: 1.5rem;
-    }
-
-    @media screen and (max-width: 480px) {
-        font-size: 1.25rem;
-    }
 
     margin-top: 0.5rem;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: bold;
-
-    @media screen and (max-width: 768px) {
-        font-size: 1.25rem;
-    }
-
-    @media screen and (max-width: 480px) {
-        font-size: 1rem;
-    }
 }
 
 h4 {
-    font-size: 1.25rem;
+    font-size: 16px;
     font-weight: bold;
-
-    @media screen and (max-width: 768px) {
-        font-size: 1rem;
-    }
-
-    @media screen and (max-width: 480px) {
-        font-size: 0.75rem;
-    }
 }
 
 h5 {
-    font-size: 1rem;
+    font-size: 12px;
     font-weight: bold;
-
-    @media screen and (max-width: 768px) {
-        font-size: 0.75rem;
-    }
-
-    @media screen and (max-width: 480px) {
-        font-size: 0.5rem;
-    }
 }
 
 h6 {
-    font-size: 0.75rem;
+    font-size: 8px;
     font-weight: bold;
+}
 
-    @media screen and (max-width: 768px) {
-        font-size: 0.5rem;
-    }
-
-    @media screen and (max-width: 480px) {
-        font-size: 0.25rem;
-    }
+p {
+    font-size: 16px;
 }
 
 button {
     background-color: var(--lt-clr-accent);
     border: none;
     color: var(--lt-clr-text-dark);
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: bold;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 48px;
     border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
@@ -144,7 +100,7 @@ input {
     border: 1px solid var(--lt-clr-accent);
     border-radius: 0.25rem;
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: 16px;
     color: var(--lt-clr-text);
 
     background: var(--lt-clr-background-dark);
@@ -166,7 +122,7 @@ textarea {
     border: 1px solid var(--lt-clr-accent);
     border-radius: 0.25rem;
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: 16px;
     color: var(--lt-clr-text);
 
     background: var(--lt-clr-background-dark);
@@ -185,14 +141,14 @@ textarea {
 }
 
 label {
-    font-size: 1rem;
+    font-size: 20px;
     color: var(--lt-clr-text);
     padding: 0.5rem 0;
 }
 
 section {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 16px;
+    margin-bottom: 48px;
 
     border-top: 1px solid var(--lt-clr-accent);
     padding-top: 0.5rem;
@@ -216,8 +172,8 @@ section {
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 16px;
+    margin-bottom: 48px;
 
     th, td {
         border: 2px solid var(--lt-clr-accent);
@@ -242,6 +198,8 @@ form {
     gap: 12px;
 
     width: 400px;
+
+    margin: 0;
 }
 
 form div {
@@ -254,8 +212,8 @@ h1 a {
 }
 
 .links {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 16px;
+    margin-bottom: 48px;
 
     display: flex;
     flex-direction: column;
@@ -267,8 +225,8 @@ h1 a {
     flex-direction: column;
     gap: 12px;
 
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 16px;
+    margin-bottom: 48px;
 
     p {
         margin: 0;
@@ -276,13 +234,13 @@ h1 a {
 
     background: var(--lt-clr-background-dark);
 
-    padding: 1rem;
+    padding: 16px;
 
     border-radius: 0.25rem;
 
     &__buttons {
         display: flex;
-        gap: 1rem;
+        gap: 48px;
         flex-wrap: wrap;
     }
 }
@@ -292,12 +250,12 @@ h1 a {
     flex-direction: column;
     gap: 12px;
 
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 16px;
+    margin-bottom: 48px;
 
     background: var(--lt-clr-background-dark);
 
-    padding: 1rem;
+    padding: 16px;
 
     border-radius: 0.25rem;
 
@@ -311,7 +269,7 @@ h1 a {
 
     &__buttons {
         display: flex;
-        gap: 1rem;
+        gap: 48px;
         flex-wrap: wrap;
     }
 
@@ -320,8 +278,8 @@ h1 a {
         flex-direction: column;
         gap: 12px;
 
-        margin-top: 1rem;
-        padding-top: 1rem;
+        margin-top: 16px;
+        padding-top: 16px;
 
         border-top: 1px solid var(--lt-clr-accent);
     }
@@ -340,23 +298,26 @@ h1 a {
         gap: 12px;
         align-items: center;
 
-        margin-top: 1rem;
-        padding-top: 2rem;
+        margin-top: 16px;
+        padding-top: 64px;
 
         border-top: 1px solid var(--lt-clr-accent);
 
     }
 
     &__tag {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 12px;
+
         background: var(--lt-clr-background);
 
         padding: 0.5rem;
 
         border-radius: 0.25rem;
-
-        @media screen and (max-width: 768px) {
-            font-size: 0.75rem;
-        }
 
         &__selector {
             width: 100%;
@@ -369,10 +330,6 @@ h1 a {
             gap: 12px;
 
             margin-bottom: 0;
-    
-            @media screen and (max-width: 768px) {
-                font-size: 0.75rem;
-            }
     
             & > select {
                 height: 35px;
@@ -390,13 +347,13 @@ h1 a {
 
     gap: 12px;
 
-    margin-top: 1rem;
+    margin-top: 16px;
 
     border-radius: 0.25rem;
 
     background: var(--lt-clr-background-dark);
 
-    padding: 1rem;
+    padding: 16px;
 
     p {
         margin: 0;
