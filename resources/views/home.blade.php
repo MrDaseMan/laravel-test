@@ -1,28 +1,25 @@
 @section('content')
 <div class="content">
-    <h1>Home</h1>
+    <h1><a href="/">Главная</a></h1>
     
     <div class="block">
-        <h2>Links</h2>
-        <ul>
-            @foreach ($links as $link)
-                <li>
-                    <a href="{{ $link->url }}">{{ $link->name }}</a>
-                </li>
-            @endforeach
-        </ul>
+        <h2>Ссылки</h2>
+        <div class="links"> 
+        @foreach ($links as $link)
+            <a href="{{ $link->url }}">{{ $link->name }}</a>
+        @endforeach
+        </div>
     </div>
 
     <div class="block"> 
-        <h2>Contact info</h2>
+        <h2>Контактная информация</h2>
         <p>
-            {{-- add text icons for words --}}
             <div>
-                Phone ☎: 
+                Номер телефона ☎: 
                 <span>{{ $data->phone }}</span>
             </div>
             <div>
-                Message 📧: 
+                Сообщение 📧: 
                 <span>{{ $data->message }}</span>
             </div>
         </p>

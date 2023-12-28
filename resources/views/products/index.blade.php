@@ -1,12 +1,15 @@
 @section('products')
 <div>
-    <h1>Products</h1>
+    <h1>
+        <a href="/">Главная</a> /
+        <a href="/products">Продукты</a>
+    </h1>
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Description</th>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Описание</th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +23,7 @@
         </tbody>
     </table>
 
-    <a href="{{ 'products/create' }}">Add product</a>
+    <button onclick="window.location='{{ '/products/create' }}'">Добавить продукт</button>
 </div>
 
 @vite('resources/scss/main.scss')

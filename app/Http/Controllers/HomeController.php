@@ -43,15 +43,17 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->links = [
-            new Link('Home', '/'),
-            new Link('About', '/about'),
-            new Link('Contact', '/contact'),
-            new Link('Products', '/products'),
+            new Link('Главная', '/'),
+            new Link('О сайте', '/about'),
+            new Link('Свяжитесь с нами', '/contact'),
+            new Link('Продукты', '/products'),
+            new Link('Посты', '/posts'),
+            new Link('Пользователи', '/users'),
         ];
 
         $this->data = new Contact('empty', 'empty');
 
-        $this->about = "This is the About page of the Laravel test application.";
+        $this->about = "Это вебсайт, написанный на Laravel 8.";
     }
 
     // index method to return home view

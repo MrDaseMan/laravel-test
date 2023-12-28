@@ -11,14 +11,14 @@ class ProductsController extends Controller
 {
     public function index()
     {
-        return view('products', [
+        return view('./products/index', [
             'products' => Product::all()
         ]);
     }
 
     public function create()
     {
-        return view('product_create');
+        return view('./products/create');
     }
 
     public function store(Request $request)

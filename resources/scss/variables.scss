@@ -1,16 +1,15 @@
 :root {
     // soft colors pallet dark theme colors
-    --lt-clr-background: #463730;
-    --lt-clr-background-light: #5b4f4a;
-    --lt-clr-background-dark: #463730;
+    --lt-clr-background: #000000;
+    --lt-clr-background-light: #29262c;
+    --lt-clr-background-dark: #111312;
 
     --lt-clr-text: rgba(247, 247, 247, 1);
     --lt-clr-text-50: rgba(247, 247, 247, 0.5);
     --lt-clr-text-dark: #463730;
     
-    --lt-clr-accent: #ffcaca;
-    --lt-clr-accent-dark: #df9b9b;
-    
+    --lt-clr-accent: white;
+    --lt-clr-accent-dark: #d3d1d1;
 
     --lt-clr-link: rgb(202, 255, 242);
 }

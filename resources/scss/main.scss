@@ -147,7 +147,7 @@ input {
     font-size: 1rem;
     color: var(--lt-clr-text);
 
-    background: var(--lt-clr-background-light);
+    background: var(--lt-clr-background-dark);
 
     @media screen and (max-width: 768px) {
         font-size: 0.75rem;
@@ -169,7 +169,7 @@ textarea {
     font-size: 1rem;
     color: var(--lt-clr-text);
 
-    background: var(--lt-clr-background-light);
+    background: var(--lt-clr-background-dark);
 
     @media screen and (max-width: 768px) {
         font-size: 0.75rem;
@@ -188,6 +188,18 @@ label {
     font-size: 1rem;
     color: var(--lt-clr-text);
     padding: 0.5rem 0;
+}
+
+section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    border-top: 1px solid var(--lt-clr-accent);
+    padding-top: 0.5rem;
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.75rem;
+    }
 }
 
 .block {
@@ -235,4 +247,108 @@ form {
 form div {
     display: flex;
     flex-direction: column;
+}
+
+h1 a {
+    text-decoration: none;
+}
+
+.links {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    p {
+        margin: 0;
+    }
+
+    background: var(--lt-clr-background-dark);
+
+    padding: 1rem;
+
+    border-radius: 0.25rem;
+
+    &__buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    background: var(--lt-clr-background-dark);
+
+    padding: 1rem;
+
+    border-radius: 0.25rem;
+
+    p {
+        margin: 0;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    &__comments {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        margin-top: 1rem;
+        padding-top: 1rem;
+
+        border-top: 1px solid var(--lt-clr-accent);
+    }
+
+    &__comment {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 1rem;
+
+    border-radius: 0.25rem;
+
+    background: var(--lt-clr-background-dark);
+
+    padding: 1rem;
+
+    p {
+        margin: 0;
+    }
+
 }
